@@ -1,25 +1,25 @@
 import locations from '../consts/locations';
 
-export function getListInfoTooltips(location) {
+export function getListTooltips (location) {
   if (
     locations[`${location}`] &&
-    locations[`${location}`].infoTooltips &&
-    locations[`${location}`].infoTooltips.length &&
-    locations[`${location}`].infoTooltips.length > 0
+    locations[`${location}`].tooltips &&
+    locations[`${location}`].tooltips.length &&
+    locations[`${location}`].tooltips.length > 0
   ) {
-    return locations[`${location}`].infoTooltips;
+    return locations[`${location}`].tooltips;
   }
   return [];
 }
 
-export function getListWayTooltips(location) {
+export function getListTransitions (location) {
   if (
     locations[`${location}`] &&
-    locations[`${location}`].wayTooltips &&
-    locations[`${location}`].wayTooltips.length &&
-    locations[`${location}`].wayTooltips.length > 0
+    locations[`${location}`].transitions &&
+    locations[`${location}`].transitions.length &&
+    locations[`${location}`].transitions.length > 0
   ) {
-    return locations[`${location}`].wayTooltips;
+    return locations[`${location}`].transitions;
   }
   return [];
 }

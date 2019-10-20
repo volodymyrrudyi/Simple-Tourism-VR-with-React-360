@@ -2,7 +2,7 @@ export default (locations = {
   CityCenter: {
     name: 'CityCenter',
     img: 'city_center.jpg',
-    infoTooltips: [
+    tooltips: [
       {
         width: 50,
         height: 50,
@@ -28,7 +28,7 @@ export default (locations = {
         img: 'state_administration.jpg',
       },
     ],
-    wayTooltips: [
+    transitions: [
       {
         width: 50,
         height: 50,
@@ -55,7 +55,7 @@ export default (locations = {
   KhmelnytskyPark: {
     name: 'KhmelnytskyPark',
     img: 'khmeln_park.jpg',
-    infoTooltips: [
+    tooltips: [
       {
         width: 35,
         height: 35,
@@ -73,7 +73,7 @@ export default (locations = {
         img: 'pyatnyckaya_church.jpg',
       },
     ],
-    wayTooltips: [
+    transitions: [
       {
         width: 50,
         height: 50,
@@ -86,7 +86,7 @@ export default (locations = {
   PopudrenkoPark: {
     name: 'PopudrenkoPark',
     img: 'popudrenko_park.jpg',
-    wayTooltips: [
+    transitions: [
       {
         width: 50,
         height: 50,
@@ -95,7 +95,7 @@ export default (locations = {
         goesTo: 'CityCenter',
       },
     ],
-    infoTooltips: [
+    tooltips: [
       {
         width: 35,
         height: 35,
@@ -109,7 +109,7 @@ export default (locations = {
   FoodAvenue: {
     name: 'PopudrenkoPark',
     img: 'food_avenue.jpg',
-    wayTooltips: [
+    transitions: [
       {
         width: 50,
         height: 50,
@@ -129,7 +129,7 @@ export default (locations = {
   CatherineChurch: {
     name: 'CatherineChurch',
     img: 'kat_church.jpg',
-    wayTooltips: [
+    transitions: [
       {
         width: 50,
         height: 50,
@@ -145,7 +145,7 @@ export default (locations = {
         goesTo: 'Val',
       },
     ],
-    infoTooltips: [
+    tooltips: [
       {
         width: 50,
         height: 50,
@@ -159,7 +159,7 @@ export default (locations = {
   Val: {
     name: 'Val',
     img: 'val.jpg',
-    wayTooltips: [
+    transitions: [
       {
         width: 50,
         height: 50,
@@ -168,7 +168,7 @@ export default (locations = {
         goesTo: 'CatherineChurch',
       },
     ],
-    infoTooltips: [
+    tooltips: [
       {
         width: 50,
         height: 50,

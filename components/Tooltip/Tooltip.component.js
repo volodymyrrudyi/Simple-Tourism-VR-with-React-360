@@ -1,7 +1,7 @@
 import React from 'react';
 import {asset, Image, View, StyleSheet, NativeModules, Text} from 'react-360';
 
-const infoTooltipModule = NativeModules.InfoTooltipModule;
+const tooltipModule = NativeModules.TooltipModule;
 
 export default class TooltipComponent extends React.Component {
   state = {
@@ -11,9 +11,9 @@ export default class TooltipComponent extends React.Component {
     isMouseOver: false,
   };
 
-  onMouseOn() {
-    infoTooltipModule.resizeTooltip(this.props.index, 300, 300);
-    this.setState({
+  onMouseOn () {
+    tooltipModule.resizeTooltip (this.props.index, 300, 300);
+    this.setState ({
       source: `img/attractions/${this.props.infoImg}`,
       width: 300,
       height: 200,
@@ -21,9 +21,13 @@ export default class TooltipComponent extends React.Component {
     });
   }
 
-  onMouseOut() {
-    infoTooltipModule.resizeTooltip(this.props.index, this.props.width, this.props.height);
-    this.setState({
+  onMouseOut () {
+    tooltipModule.resizeTooltip (
+      this.props.index,
+      this.props.width,
+      this.props.height
+    );
+    this.setState ({
       source: this.props.iconImg,
       width: this.props.width,
       height: this.props.height,
@@ -31,8 +35,8 @@ export default class TooltipComponent extends React.Component {
     });
   }
 
-  render() {
-    const styleSheet = StyleSheet.create({
+  render () {
+    const styleSheet = StyleSheet.create ({
       viewPanel: {
         width: this.state.width,
         height: this.state.height,
@@ -52,13 +56,21 @@ export default class TooltipComponent extends React.Component {
     });
 
     return (
-      <View hitSlop={160} style={styleSheet.viewPanel} onEnter={() => this.onMouseOn()} onExit={() => this.onMouseOut()}>
-        <Image source={asset(`${this.state.source}`)} style={styleSheet.viewPanel} />
-        {this.state.isMouseOver ? (
-          <View style={styleSheet.textBlock}>
-            <Text style={styleSheet.text}>{this.props.text}</Text>
-          </View>
-        ) : null}
+      <View
+        hitSlop={160}
+        style={styleSheet.viewPanel}
+        onEnter={() => this.onMouseOn ()}
+        onExit={() => this.onMouseOut ()}
+      >
+        <Image
+          source={asset (`${this.state.source}`)}
+          style={styleSheet.viewPanel}
+        />
+        {this.state.isMouseOver
+          ? <View style={styleSheet.textBlock}>
+              <Text style={styleSheet.text}>{this.props.text}</Text>
+            </View>
+          : null}
       </View>
     );
   }
